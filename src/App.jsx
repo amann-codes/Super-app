@@ -5,7 +5,7 @@ export default function App(){
     <div>
       <BrowserRouter>
       <Routes>
-        <Route path="/registration" element={<Registration/>}/>
+        <Route path="/" element={<Registration/>}/>
       </Routes>
       </BrowserRouter>
     </div>
