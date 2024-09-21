@@ -2,7 +2,6 @@ import React from 'react'
 import image from './pfp.png';
 export default function ProfileCard() {
   const cat = JSON.parse(localStorage.getItem('selectedCategories'))
-  console.log(cat)
   return (
     <div className='w-[600px] h-max flex flex-row bg-[#5746EA] rounded-3xl'>
         <img src={image} width={100} className='m-4'></img>
