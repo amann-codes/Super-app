@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import image from "./image.png";
+import { useNavigate } from "react-router-dom";
 
 export default function RegistrationForm() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -50,6 +52,7 @@ export default function RegistrationForm() {
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
       localStorage.setItem("mobile", mobile);
+      navigate('/category')
     }
   };
 

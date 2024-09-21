@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import CategoryCard from "../components/CategoryCard";
 import image from "../components/image.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Category() {
+  const navigate = useNavigate();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [error, setError] = useState("");
 
@@ -16,8 +18,6 @@ export default function Category() {
     if (!selectedCategories.includes(title)) {
       const updatedCategories = [...selectedCategories, title];
       setSelectedCategories(updatedCategories);
-
-      // Reset error message if 3 or more categories are selected
       if (updatedCategories.length >= 3) {
         setError("");
       }
@@ -30,7 +30,6 @@ export default function Category() {
     );
     setSelectedCategories(updatedCategories);
 
-    // Reset error message if fewer than 3 categories are selected
     if (updatedCategories.length < 3) {
       setError("Minimum 3 categories required to proceed.");
     }
@@ -40,12 +39,12 @@ export default function Category() {
     if (selectedCategories.length < 3) {
       setError("Minimum 3 categories required to proceed.");
     } else {
-      // Store in local storage and proceed to the next page
+
       localStorage.setItem(
         "selectedCategories",
         JSON.stringify(selectedCategories)
       );
-      // Redirect logic goes here (e.g., using react-router)
+
     }
   };
 
@@ -139,7 +138,10 @@ export default function Category() {
       <div className="flex justify-end my-auto mr-[72px] pb-5">
         <button
           className="bg-[#148A08] text-white font-dmsans font-medium rounded-full w-max py-2 px-3"
-          onClick={handleNextPage}
+          onClick={()=>{
+            handleNextPage();
+            navigate('/homepage')
+          }}
         >
           Next Page
         </button>
