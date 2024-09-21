@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Registration from "./pages/Registration";
-import Category from "./pages/category";
+import Category from "./pages/Category";
 export default function App(){
   return (
     <div>
