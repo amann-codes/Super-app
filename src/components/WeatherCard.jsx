@@ -16,7 +16,7 @@ export default function WeatherCard() {
       const apiKey = import.meta.env.VITE_API_KEY;
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/timezone.json?key=${apiKey}&q=London`
+          `https://api.weatherapi.com/v1/timezone.json?key=${apiKey}&q=London`
         );
         const [date, time] = response.data.location.localtime.split(" ");
         setLocaltime(time);
@@ -26,7 +26,7 @@ export default function WeatherCard() {
       }
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=London&aqi=no`
+          `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=London&aqi=no`
         );
         const text = response.data.current.condition.text;
         const icon = response.data.current.condition.icon;
