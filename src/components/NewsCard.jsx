@@ -35,7 +35,7 @@ const NewsCard = () => {
       <div className="relative h-[300px]">
         <img src={article.picture} className="w-full h-full object-cover" alt="News Article" />
         <div className="absolute bottom-0 bg-black bg-opacity-75 flex flex-col justify-center px-3 py-2">
-          <h2 className="text-white text-xl font-bold mb-1">{article.title}</h2>
+          <h2 className="text-white text-base font-bold mb-1">{article.title}</h2>
           <p className="text-white text-sm">
             {new Date(article.time).toLocaleDateString()}
           </p>
