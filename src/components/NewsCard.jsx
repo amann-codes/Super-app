@@ -12,7 +12,7 @@ const NewsCard = () => {
 
   useEffect(() => {
     async function fetchNews() {
-      try {
+
         const response = await axios.get(
           `https://newsapi.org/v2/everything?q=tesla&from=2024-08-24&sortBy=publishedAt&apiKey=${apiKey}`
         );
@@ -23,10 +23,10 @@ const NewsCard = () => {
           content: article.content,
           title: article.title,
         });
-      } catch (error) {
-        console.error("Error fetching news:", error);
+ 
       }
-    }
+      
+    
     fetchNews();
   }, [apiKey]);
 
