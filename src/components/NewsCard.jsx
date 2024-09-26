@@ -14,7 +14,7 @@ const NewsCard = () => {
     async function fetchNews() {
 
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=tesla&from=2024-08-24&sortBy=publishedAt&apiKey=${apiKey}`
+          `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${apiKey}`
         );
         const article = response.data.articles[2];
         setArticle({
@@ -25,13 +25,11 @@ const NewsCard = () => {
         });
  
       }
-      
-    
     fetchNews();
   }, [apiKey]);
 
   return (
-    <div className="flex flex-col w-[250px] h-[438px] rounded-xl bg-white overflow-hidden">
+    <div className="flex flex-col w-[250px] h-[675px] rounded-xl bg-white overflow-hidden">
       <div className="relative h-[300px]">
         <img src={article.picture} className="w-full h-full object-cover" alt="News Article" />
         <div className="absolute bottom-0 bg-black bg-opacity-75 flex flex-col justify-center px-3 py-2">
